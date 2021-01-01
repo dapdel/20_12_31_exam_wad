@@ -6,7 +6,7 @@ export const vaccins = [{
   lieux_de_production: 'Chine',
   technologie: 'virus inactivé',
   quantite: '420',
-  prix_unitaire: '17$',
+  prix_unitaire: '17',
   approuve: 'oui',
 },
 {
@@ -17,7 +17,7 @@ export const vaccins = [{
   lieux_de_production: 'Russie, Inde',
   technologie: 'adenovirus',
   quantite: '130',
-  prix_unitaire: '12$',
+  prix_unitaire: '12',
   approuve: 'non',
 },
 {
@@ -28,7 +28,7 @@ export const vaccins = [{
   lieux_de_production: 'Royaume Unis, Brésil, Inde',
   technologie: 'adenovirus',
   quantite: '5028',
-  prix_unitaire: '1.78$',
+  prix_unitaire: '1.78',
   approuve: 'non',
 },
 {
@@ -39,7 +39,7 @@ export const vaccins = [{
   lieux_de_production: 'Allemagne, USA',
   technologie: 'ARN messager',
   quantite: '980',
-  prix_unitaire: '14$',
+  prix_unitaire: '14',
   approuve: 'oui',
 },
 {
@@ -50,7 +50,7 @@ export const vaccins = [{
   lieux_de_production: 'USA',
   technologie: 'ARN messager',
   quantite: '240',
-  prix_unitaire: '28$',
+  prix_unitaire: '28',
   approuve: 'non',
 },
 {
@@ -61,6 +61,6 @@ export const vaccins = [{
   lieux_de_production: 'USA, Amérique du Sud, Ukraine, Afrique du Sud',
   technologie: 'adenovirus',
   quantite: '110',
-  prix_unitaire: '31$',
+  prix_unitaire: '31',
   approuve: 'non',
 }];

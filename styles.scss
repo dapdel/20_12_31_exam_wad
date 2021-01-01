@@ -13,12 +13,13 @@ h1{
   text-align: center;
   color: red;
 }
+
 header{
   margin:15px;
   text-align: center;
   button{
-    margin: 0 30px;
     width: 250px;
+    margin: 5px 30px;
   }
 }
 main{
@@ -36,7 +37,7 @@ main{
       width:300px;
       border:1px solid rgba(0, 0, 0, 0.2);
       box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-      form{
+      .bas{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -50,5 +51,20 @@ main{
         text-align: center;
       }
     }
+  }
+}
+footer{
+  text-align: center;
+  
+  h2{
+    color:red;
+  }
+  .reservation{
+    text-align: left;
+    width: 300px;
+    margin: auto;
+  }
+  button{
+    margin: 15px 30px;
   }
 }
