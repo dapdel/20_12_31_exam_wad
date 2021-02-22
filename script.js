@@ -4,22 +4,23 @@ import { vaccins } from './src/data';
 let commandes = [];
 let prixTotal = 0;
 // création de la structure de la page
-document.querySelector('#app').innerHTML = `<h1>Covid Killer</h1>
-                                            <header>
-                                                <button class="triParPrix">Classement des vaccins par prix</button>
-                                                <button class="btnNonApp">Cacher les vaccins non-approuvés</button>
-                                            </header>
-                                            <main>
-                                            </main>
-                                            <footer>
-                                                <h2>Réservations</h2>
-                                                <div class="commandeVaccins">
-                                                </div>
-                                                <div>
-                                                  <button class="btnCommander">passer la commande</button>
-                                                  <button class="btnAnnuler">annuler la commande</button>
-                                                </div>
-                                            </footer>`;
+document.querySelector('#app').innerHTML = `
+<h1>Covid Killer</h1>
+<header>
+    <button class="triParPrix">Classement des vaccins par prix</button>
+    <button class="btnNonApp">Cacher les vaccins non-approuvés</button>
+</header>
+<main>
+</main>
+<footer>
+    <h2>Réservations</h2>
+    <div class="commandeVaccins">
+    </div>
+    <div>
+      <button class="btnCommander">passer la commande</button>
+      <button class="btnAnnuler">annuler la commande</button>
+    </div>
+</footer>`;
 
 // FCT de REALISATION du MAIN
 
@@ -90,6 +91,8 @@ btnNonApp.addEventListener('click', () => {
     btnNonApp.innerHTML = 'Cacher les vaccins non-approuvés';
   } else {
     for (const vaccin of vaccins) {
+      /* const vaccinsAprouve = vaccins.filter(v =>v.approuve === "oui);
+      mieux que ce qui est ci-bas */
       if (vaccin.approuve === 'oui') {
         vaccinsApprouve.push(vaccin);
       }
@@ -126,6 +129,38 @@ for (const btnReserve of btnsReserve) {
     // }
   });
 }
+
+/* ALTERNATIVE POPOSEE PAR LOIC
+// gestion des RESERVATIONS
+document.body.addEventListener('click', (e) => {
+  if (e.target.matches('.reserve')) {
+    const elmtId = e.target.id;
+    const input = document.querySelector(`#quantity${elmtId}`).value;
+    // if (input <= vaccins[elmtId - 1].quantite) {
+    // calcul du prix
+    const prixUnitaire = vaccins[elmtId - 1].prix_unitaire;
+    const prixVaccin = (prixUnitaire * input);
+    prixTotal += prixVaccin;
+    // mise dans commandes
+    commandes.push({
+      id: `${elmtId}`,
+      nom: `${vaccins[elmtId - 1].nom}`,
+      nombre: `${input}`,
+      prix_total: `${prixVaccin}`,
+    });
+    // et faire afficher dans footer
+    renderCommandes(commandes);
+    e.currentTarget.disabled = true;
+    document.querySelector(`#quantity${elmtId}`).style.visibility = 'hidden';
+    btnCommander.disabled = false;
+    btnAnnuler.disabled = false;
+    // } else {
+    // eslint-disable-next-line no-alert
+    // alert('Pas de stock disponible pour cette quantité là');
+    // }
+  }
+});
+*/
 
 // PASSER COMMANDES
 
